@@ -70,7 +70,7 @@ fn main() {
                     for run_content in content {
                         // Check if the RunContent type is text
                         if let RunContent::Text(t) = run_content {
-                            // Push the text value of the paragraph
+                            // Push the text value of the paragraph to paragraph string
                             paragraph_text.push_str(&t.text);
                         }
                     }
