@@ -87,29 +87,26 @@ fn main() {
 
                 // Create a run for the question line
                 let mut run_q = Run::default();
-                
                 run_q = run_q.push_text(format!("Q{}: {}", qnum, question));
-                run_q = run_q.push_break(BreakType::TextWrapping); // actual newline
+                run_q = run_q.push_break(BreakType::TextWrapping);
 
                 // Create a run for the answer line
                 let mut run_a = Run::default();
                 run_a = run_a.push_text(format!("A{}:", qnum));
                 run_a = run_a.push_break(BreakType::TextWrapping);
 
-                // Push both runs into the paragraph
                 new_para = new_para.push(run_q);
                 new_para = new_para.push(run_a);
 
-                // Push to paragraph vector
                 new_paragraphs.push(new_para);
             } else {
-                // Append paragraph to vector if it doesn't match regex
+                // Append paragraph as is to vector if it doesn't match regex
                 new_paragraphs.push(Paragraph::default().push_text(paragraph_text));
             }
         }
     }
 
-    // Clear inital document contents
+    // Clear inital contents
     docx.document.body.content.clear();
 
     // Build document contents
