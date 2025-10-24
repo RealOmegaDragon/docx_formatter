@@ -56,7 +56,7 @@ docx_formatter/
 The tool reads your input Word file, detects question patterns, and writes a new formatted version to the specified output path.
 
 ## Example
-### Input (file contents):
+### Input:
 ```
 Q1. What is Rust?
 Q2: Why is it safe?
